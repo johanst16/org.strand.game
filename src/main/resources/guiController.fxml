@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane fx:id="rootBox" id="AnchorPane" prefHeight="400" prefWidth="620" xmlns:fx="http://javafx.com/fxml" fx:controller="org.strand.game.fx.GuiController">
+
+</AnchorPane>
