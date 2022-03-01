@@ -4,6 +4,7 @@ import javafx.util.Pair;
 import org.junit.Assert;
 import org.junit.Test;
 import org.strand.game.Playground;
+import org.strand.game.figure.Octagon2;
 import org.strand.game.figure.TestFigure;
 
 import java.util.ArrayList;
@@ -23,5 +24,10 @@ public class PlaygroundTest {
         Assert.assertEquals(3, playground.countLiveCells());
         Assert.assertEquals(8, playground.getPlaygroundWidth());
         Assert.assertEquals(7, playground.getPlaygroundHeight());
+    }
+
+    @Test(expected = ArrayIndexOutOfBoundsException.class)
+    public void playgroundTestToSmall() {
+        Playground playground = new Playground(new Octagon2(1, 1));
     }
 }

@@ -49,7 +49,14 @@ public class Main {
             figure = new Random(height, width);
         }
 
-        playground = new Playground(figure);
+        try {
+            playground = new Playground(figure);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.err.println("Could not create figure : " + e.getMessage() + "\n");
+            e.printStackTrace();
+            return;
+        }
+
         gameRules = new GameRules(playground);
         new Play(new SimpleController(), playground, gameRules, 300).start();
     }

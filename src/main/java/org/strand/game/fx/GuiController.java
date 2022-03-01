@@ -55,7 +55,14 @@ public class GuiController implements Initializable, Controller {
             figure = new Random(200, 200);
         }
 
-        playground = new Playground(figure);
+        try {
+            playground = new Playground(figure);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.err.println("Could not create figure : " + e.getMessage() + "\n");
+            e.printStackTrace();
+            return;
+        }
+
         gameRules = new GameRules(playground);
         new Play(this, playground, gameRules, 1300).start();
     }
